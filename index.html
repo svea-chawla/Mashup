@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: pink;
+        ;
+        margin: 0;
+        padding: 40px;
+      }
+
+      h2 {
+        color: #1976d2;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      label {
+        font-weight: bold;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        opacity: 0.8;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      p#email_sent_message {
+        color: #4caf50;
+        font-weight: bold;
+        display: none;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Singer Songs Mashup</h2>
+
+    <form action="/submit_form" method="post" onsubmit="showEmailSent()">
+      <label for="singer_name">Enter Singer Name:</label><br />
+      <input
+        type="text"
+        id="singer_name"
+        name="singer_name"
+        value="Sharry Mann"
+      /><br /><br />
+      <label for="num_videos">Number of Videos:</label><br />
+      <input type="text" id="num_videos" name="num_videos" value="E.g 15" /><br /><br />
+      <label for="video_duration">Duration of each video (sec):</label><br />
+      <input
+        type="text"
+        id="video_duration"
+        name="video_duration"
+        value="E.g. 25"
+      /><br /><br />
+      <label for="email_id">Email Id:</label><br />
+      <input
+        type="email"
+        id="email_id"
+        name="email_id"
+        value="xyz@gmail.com"
+      /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p id="email_sent_message">Email sent</p>
+
+    <script>
+      function showEmailSent() {
+        document.getElementById("email_sent_message").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
